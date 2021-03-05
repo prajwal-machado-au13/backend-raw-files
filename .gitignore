@@ -3,6 +3,6 @@ SQL/
 Oauth-keys.txt/
 cloudinary.txt
 .env*
-User-Pages/
 keys.js
-user_login/
+User-Pages/
+Oauth-keys.txt
