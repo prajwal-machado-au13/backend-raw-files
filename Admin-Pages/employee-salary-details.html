@@ -6,22 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+        <link rel= "stylesheet" type="text/css" href="../public/css/styles.css"/>
         <title>Admin Login</title>
-        <style>
-            /* Chrome, Safari, Edge, Opera */
-            input::-webkit-outer-spin-button,
-            input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-            }
-
-            /* Firefox */
-            input[type=number] {
-            -moz-appearance: textfield;
-            }
-        </style>
     </head>
-    <body>
+    <body class="bg">
 
         <nav class="navbar navbar-light bg-light">
             <a class="navbar-brand" href="#">
@@ -34,59 +22,57 @@
 
         <h2 class="text-center">Employee Salary Details</h2>
 
-
-
         <div class="container">
-            <div class="row">
-                <div class="col-xs-6 mx-auto">
+            <div class="row text-white">
+                <div class="col-6 mx-auto">
 
-                    <form >
+                    <form class="form-controller">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group p-2 w-100">
+                                    <label for="InputBasic">Basic Salary</label>
+                                    <input type="number" class="form-control" id="InputBasic" placeholder="Enter Basic Salary" maxlength="6"/>
+                                </div>
 
-                        <div class="form-group p-2 w-100">
-                            <label for="InputBasic">Basic Salary</label>
-                            <input type="number" class="form-control" id="InputBasic" placeholder="Enter Basic Salary" maxlength="6"/>
-                        </div>
+                                <div class="form-group p-2 w-100">
+                                    <label for="InputDA">DA</label>
+                                    <input type="number" class="form-control" id="InputDA" placeholder="Enter Dearness Allowance" maxlength="4"/>
+                                </div>
 
-                        <div class="form-group p-2 w-100">
-                            <label for="InputDA">DA</label>
-                            <input type="number" class="form-control" id="InputDA" placeholder="Enter Dearness Allowance" maxlength="4"/>
-                        </div>
+                                <div class="form-group p-2 w-100">
+                                    <label for="InputHRA">HRA</label>
+                                    <input type="number" class="form-control" id="InputHRA" placeholder="Enter House Rental Allowance" maxlength="4"/>
+                                </div>
 
-                        <div class="form-group p-2 w-100">
-                            <label for="InputHRA">HRA</label>
-                            <input type="number" class="form-control" id="InputHRA" placeholder="Enter House Rental Allowance" maxlength="4"/>
-                        </div>
+                                <div class="form-group p-2 w-100">
+                                    <label for="InputMedical">Medical Allowance</label>
+                                    <input type="number" class="form-control" id="InputMedical" placeholder="Enter Medical Allowance" maxlength="5"/>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group p-2 w-100">
+                                    <label for="InputProfTax">Professinal Tax</label>
+                                    <input type="number" class="form-control" id="InputProfTax" placeholder="Enter Medical Allowance" maxlength="6" value="200" readonly/>
+                                </div>
+                                <div class="dropdown">
+                                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Income Tax
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">10%</a>
+                                        <a class="dropdown-item" href="#">20%</a>
+                                        <a class="dropdown-item" href="#">30%</a>
+                                    </div>
+                                </div>
 
-                        <div class="form-group p-2 w-100">
-                            <label for="InputMedical">Medical Allowance</label>
-                            <input type="number" class="form-control" id="InputMedical" placeholder="Enter Medical Allowance" maxlength="5"/>
-                        </div>
+                                <div class="form-group p-2 w-100">
+                                    <label for="InputBasic">Provident Fund</label>
+                                    <input type="number" class="form-control" id="InputMedical"  maxlength="6" value={{value}} readonly/>
+                                </div>
 
-                        <div class="form-group p-2 w-100">
-                            <label for="InputProfTax">Professinal Tax</label>
-                            <input type="number" class="form-control" id="InputProfTax" placeholder="Enter Medical Allowance" maxlength="6" value="200" readonly/>
-                        </div>
-
-
-                        <div class="dropdown">
-                            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Income Tax
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">10%</a>
-                                <a class="dropdown-item" href="#">20%</a>
-                                <a class="dropdown-item" href="#">30%</a>
                             </div>
                         </div>
-
-                        <div class="form-group p-2 w-100">
-                            <label for="InputBasic">Provident Fund</label>
-                            <input type="number" class="form-control" id="InputMedical"  maxlength="6" value={{value}} readonly/>
-                        </div>
-
-
-                        <button type="submit" class="btn btn-success ">Save</button>
-
+                        <button type="submit" class="btn btn-success btn-block">Save</button>
                     </form>
                 </div>
             </div>
