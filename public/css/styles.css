@@ -1,9 +1,9 @@
 .bg {
-    background: url('../css/images.jpeg') no-repeat center center fixed;
+    background: url('../css/payrolls.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: contain;
+    background-size: cover;
   }
 .form-controller{
     background: rgb(18, 21, 31);
