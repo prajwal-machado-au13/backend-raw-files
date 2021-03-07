@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-
 const cloudinary = require("../utils/cloudinary");
 const upload = require("../utils/multer");
 const Employee = require("../models/Employee");
@@ -16,6 +15,8 @@ router.get('/', (req, res) => {
 router.post("/", upload.single("image"), async (req, res) => {
   try {
     // Upload image to cloudinary
+    console.log(req.body)
+    // console.log(res)
     const result = await cloudinary.uploader.upload(req.file.path);
     // res.json(result)
     // Create new user
@@ -27,7 +28,7 @@ router.post("/", upload.single("image"), async (req, res) => {
       phone: req.body.email,
       phone: req.body.address,
       pancard: req.body.pancard,
-      cloudinary_id: result.public_id,
+      cloudinary_id: result.secure_url,
       basicsalary: req.body.basicsalary,
       da: req.body.da,
       hra: req.body.hra,
