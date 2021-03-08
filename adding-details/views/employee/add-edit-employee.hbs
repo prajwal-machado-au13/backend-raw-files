@@ -1,4 +1,3 @@
-<h3>{{viewTitle}}</h3>
 <form class="form-controller px-5" action="/employee" method="POST" autocomplete="off" enctype="multipart/form-data">
     <div class="row">
         <div class="col">
@@ -42,8 +41,7 @@
         <div class="col">
             <div class="form-group">
                 <label for="txtPANCard">PAN Card</label>
-                <input name="txtPANCard" type="text" id="txtPANCard" class="form-control" placeholder="Enter PAN Number"
-                    name="pancard" />
+                <input type="text" id="txtPANCard" class="form-control" placeholder="Enter PAN Number" name="pancard" />
                 <!-- <span id="lblPANCard" class="error">Invalid PAN Number</span> -->
             </div>
         </div>
@@ -76,7 +74,7 @@
 
             <div class="form-group">
                 <label for="InputMedical">Medical Allowance</label>
-                <input type="number" class="form-control" id="InputMedical" placeholder="Enter Medical" maxlength="5"
+                <input type="number" class="form-control" id="InputMedical" placeholder="Enter Medical" maxlength="4"
                     name="medical" />
             </div>
         </div>
@@ -84,25 +82,27 @@
             <div class="form-group">
                 <label for="InputProfTax">Professinal Tax</label>
                 <input type="number" class="form-control" id="InputProfTax" placeholder="Enter Professional Tax"
-                    maxlength="6" name="proftax">
+                    maxlength="3" name="proftax">
             </div>
             <div class="form-group dropdown">
-                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{!-- <button class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     Income Tax
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">10%</a>
-                    <a class="dropdown-item" href="#">20%</a>
-                    <a class="dropdown-item" href="#">30%</a>
-                </div>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                    <a class="dropdown-item" data-value="10" href="#">10%</a>
+                    <a class="dropdown-item" data-value="20" href="#">20%</a>
+                    <a class="dropdown-item" data-value="30" href="#">30%</a>
+                </div> --}}
+                <label for="cars">Income Tax</label>
 
-                {{!-- <input type="radio" id="male" name="incometax" value="10">
-                <label for="male">10%</label><br>
-                <input type="radio" id="female" name="incometax" value="20">
-                <label for="female">20%</label><br>
-                <input type="radio" id="other" name="incometax" value="30">
-                <label for="other">30%r</label> --}}
+                <select name="incometax" id="cars">
+                    <option value="10">10%</option>
+                    <option value="20">20%</option>
+                    <option value="30">30%</option>
+                    {{!-- <option value="audi">Audi</option> --}}
+                </select>
+
             </div>
 
             <div class="form-group">
@@ -118,12 +118,3 @@
         Save</button>
 
 </form>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>

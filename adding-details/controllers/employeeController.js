@@ -41,7 +41,8 @@ router.post("/", upload.single("image"), async (req, res) => {
     await employee.save();
     res.json(employee);
   } catch (err) {
-    console.log(err);
+    console.log(err.message);
+    return res.json(err)
   }
 });
 
