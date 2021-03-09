@@ -3,11 +3,13 @@ const validator = require('validator')
 var employeeSchema = new mongoose.Schema({
     firstname : {
         type:String,
+        trim:true,
         required:[true,"Enter the firstname"]
     },
-    lastname : String,
+    lastname : {type: String, trim:true},
     email : {
         type: String,
+        trim:true,
         required: true,
         unique:true,
         validate(value){
@@ -24,62 +26,59 @@ var employeeSchema = new mongoose.Schema({
     },
     phone : {
         type: String,
-        required:true,
-        validate(value){
-            if(!validator.isMobilePhone(value)) {
-                throw new Error("Mobile number is inValid")
-            }
-        }
+        required: false,
+        validate: /\d{5}([- ]*)\d{6}/
     },
     address: String,
     pancard : {
         type: String,
+        trim:true,
         required: [true,"enter the pancard number"]
     },
     cloudinary_id: String,
     basicsalary : {
-        type: Number,
-        required: true,
-            validate(value){
-                if(validator.isLength(value)<=6){
-                    throw new Error("CHeck the number of digits entered")
-                }
-            }
+        type     : Number,
+        required : true,
+        trim:true,
+        validate : {
+          validator : Number.isInteger,
+          message   : '{VALUE} is not an integer value'
+        }
     },
     da: {
-        type: Number,
-        required: true,
-        validate(value){
-            if(validator.isLength(value)<=4){
-                throw new Error("CHeck the number of digits entered")
-            }
+        type     : Number,
+        required : true,
+        trim:true,
+        validate : {
+            validator : Number.isInteger,
+            message   : '{VALUE} is not an integer value'
         }
     },
     hra : {
-        type: Number,
-        required: true,
-        validate(value){
-            if(validator.isLength(value)<=4){
-                throw new Error("CHeck the number of digits entered")
-            }
+        type     : Number,
+        required : true,
+        trim:true,
+        validate : {
+          validator : Number.isInteger,
+          message   : '{VALUE} is not an integer value'
         }
     },
     medical : {
-        type : Number,
-        required: true,
-        validate(value){
-            if(validator.isLength(value)<=4){
-                throw new Error("CHeck the number of digits entered")
-            }
+        type     : Number,
+        required : true,
+        trim:true,
+        validate : {
+          validator : Number.isInteger,
+          message   : '{VALUE} is not an integer value'
         }
     },
     proftax : {
-        type: Number,
-        required: true,
-        validate(value){
-            if(validator.isLength(value)<=3){
-                throw new Error("CHeck the number of digits entered")
-            }
+        type     : Number,
+        required : true,
+        trim:true,
+        validate : {
+          validator : Number.isInteger,
+          message   : '{VALUE} is not an integer value'
         }
     },
     incometax : {
@@ -88,12 +87,12 @@ var employeeSchema = new mongoose.Schema({
         required : true
     },
     providentfund : {
-        type: Number,
-        required: true,
-        validate(value){
-            if(validator.isLength(value)<=4){
-                throw new Error("CHeck the number of digits entered")
-            }
+        type     : Number,
+        required : true,
+        trim:true,
+        validate : {
+          validator : Number.isInteger,
+          message   : '{VALUE} is not an integer value'
         }
     }
 })
